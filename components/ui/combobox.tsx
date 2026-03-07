@@ -1,8 +1,8 @@
 import { useLayoutEffect, useRef, useState } from "react";
 
 export const TRANSLATION_OPTIONS = [
-    { value: "id.indonesian", label: "🇮🇩 Indonesia" },
-    { value: "en.sahih", label: "ᴇɴ English" },
+    { value: "id.indonesian", label: "Indonesia" },
+    { value: "en.sahih", label: "English" },
 ];
 
 export const QORI_OPTIONS = [
@@ -47,17 +47,17 @@ export default function Combobox({ label, value, options, disabled, onChange, ic
             <button
                 onClick={() => setOpen(v => !v)}
                 disabled={disabled}
-                className="flex items-center gap-2 px-3 py-2 bg-white border border-slate-200 rounded-lg text-xs sm:text-sm text-slate-700 hover:border-emerald-400 hover:bg-emerald-50 transition-all min-w-48 justify-between"
+                className="flex items-center gap-2 px-3 py-2 bg-white border border-emerald-200 rounded-lg text-xs sm:text-sm text-slate-700 hover:border-emerald-400 hover:bg-emerald-50 transition-all min-w-48 justify-between"
             >
                 <span className="flex items-center gap-2 truncate">
                     {icon}
-                    <span className="text-slate-400 shrink-0">{label}:</span>
-                    <span className="font-medium text-slate-700 truncate">{selected?.label ?? "—"}</span>
+                    <span className="text-emerald-600 shrink-0">{label}:</span>
+                    <span className="font-medium text-slate-600 truncate">{selected?.label ?? "—"}</span>
                 </span>
                 <svg
                     xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                     fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                    className={`shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
+                    className={`text-emerald-400 shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
                 >
                     <path d="m6 9 6 6 6-6" />
                 </svg>
@@ -71,7 +71,7 @@ export default function Combobox({ label, value, options, disabled, onChange, ic
                                 autoFocus
                                 value={search}
                                 onChange={e => setSearch(e.target.value)}
-                                placeholder="Cari surah..."
+                                placeholder="Cari ..."
                                 className="w-full px-3 py-1.5 text-xs sm:text-sm border border-slate-200 rounded-lg outline-none focus:border-emerald-400"
                             />
                         </div>

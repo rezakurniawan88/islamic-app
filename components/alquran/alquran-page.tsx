@@ -41,10 +41,10 @@ export default function AlquranPage() {
         <div className="px-7 sm:px-14 py-5 sm:py-7 flex-1 overflow-auto">
             <div>
                 <h1 className="text-xl sm:text-2xl font-semibold">Al-Qur&apos;an</h1>
-                <p className="text-xs sm:text-sm text-slate-400">Select and read here the surah you want to find</p>
+                <p className="text-xs sm:text-sm text-slate-400">Pilih dan baca surat yang ingin Anda cari di sini.</p>
             </div>
             <div className="py-5 space-y-3">
-                <h1 className="text-sm sm:text-base font-semibold text-gray-500">Search Surah</h1>
+                <h1 className="text-sm sm:text-base font-semibold text-gray-500">Cari Surat</h1>
                 <Search searchTerm={searchTerm} onSearchChange={setSearchTerm} />
             </div>
 
@@ -59,7 +59,7 @@ export default function AlquranPage() {
                 </div>
             ) : (
                 <div className="py-0 sm:py-2">
-                    <h1 className="text-base sm:text-lg font-semibold text-gray-500">List Surah</h1>
+                    <h1 className="text-base sm:text-lg font-semibold text-gray-500">Daftar Surat</h1>
                     {filteredSurah.length === 0 ? (
                         <div className="flex items-center justify-center min-h-96">
                             <p className="text-gray-400">No surahs found matching &quot;{searchTerm}&quot;</p>
