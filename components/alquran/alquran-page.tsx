@@ -38,9 +38,9 @@ export default function AlquranPage() {
     }, [surahList, searchTerm]);
 
     return (
-        <div className="px-7 sm:px-14 py-5 sm:py-7 flex-1 overflow-auto">
+        <div className="pt-20 pb-5 px-7 lg:px-10 sm:py-6 flex-1 overflow-auto">
             <div>
-                <h1 className="text-xl sm:text-2xl font-semibold">Al-Qur&apos;an</h1>
+                <h1 className="text-lg sm:text-2xl font-semibold">Al-Qur&apos;an</h1>
                 <p className="text-xs sm:text-sm text-slate-400">Pilih dan baca surat yang ingin Anda cari di sini.</p>
             </div>
             <div className="py-5 space-y-3">

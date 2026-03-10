@@ -29,7 +29,7 @@ export default function Combobox({ label, value, options, disabled, onChange, ic
     const ref = useRef<HTMLDivElement>(null);
 
     const selected = options.find(option => option.value === value);
-    const filtered = searchable ? options.filter(option => option.label.toLowerCase().includes(search.toLowerCase())) : options;
+    const filtered = searchable ? options.filter(option => String(option.label).toLowerCase().includes(search.toLowerCase())) : options;
 
     useLayoutEffect(() => {
         const handler = (e: MouseEvent) => {
@@ -47,7 +47,7 @@ export default function Combobox({ label, value, options, disabled, onChange, ic
             <button
                 onClick={() => setOpen(v => !v)}
                 disabled={disabled}
-                className="flex items-center gap-2 px-3 py-2 bg-white border border-emerald-200 rounded-lg text-xs sm:text-sm text-slate-700 hover:border-emerald-400 hover:bg-emerald-50 transition-all min-w-48 justify-between"
+                className="flex items-center gap-2 px-3 py-2 bg-white border border-emerald-200 rounded-lg text-xs sm:text-sm text-slate-700 hover:border-emerald-400 hover:bg-emerald-50 transition-all w-full sm:min-w-48 justify-between"
             >
                 <span className="flex items-center gap-2 truncate">
                     {icon}
