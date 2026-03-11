@@ -35,6 +35,14 @@ export default function Sidebar() {
             ),
             label: "Imsakiyah",
             href: "/imsakiyah"
+        },
+        {
+            id: "asmaul-husna" as NavItem,
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-emerald-500"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" /><path d="m8 13 4-7 4 7" /><path d="M9.1 11h5.7" /></svg>
+            ),
+            label: "Asmaul Husna",
+            href: "/asmaul-husna"
         }
     ]
 
@@ -60,7 +68,7 @@ export default function Sidebar() {
                     </button>
                 </div>
                 <div className={`${sidebarIsOpen ? "p-3 mt-5" : "p-0 mt-5"}`}>
-                    {sidebarIsOpen && <h1 className="text-sm text-gray-400 mb-2">Main</h1>}
+                    {sidebarIsOpen && <h1 className="text-sm text-gray-400 mb-2">Menu</h1>}
                     <div className="space-y-1">
                         {navItems.map((item) => (
                             <Link
@@ -87,6 +95,9 @@ export default function Sidebar() {
                         ))}
                     </div>
                 </div>
+                <p className="text-xs text-gray-500 text-center mt-auto">
+                    &copy; {new Date().getFullYear()} Islamic App.
+                </p>
             </div>
 
             <div className="sm:hidden fixed top-0 left-0 right-0 bg-white border-b border-gray-200 p-4 z-40 flex items-center gap-2">
