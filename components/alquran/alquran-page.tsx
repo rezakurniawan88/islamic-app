@@ -42,7 +42,7 @@ export default function AlquranPage() {
             {isLoading ? (
                 <div className="flex items-center justify-center min-h-96">
                     <div className="animate-spin">
-                        <svg className="w-12 h-12 text-emerald-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <svg className="w-12 h-12 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
@@ -58,10 +58,10 @@ export default function AlquranPage() {
                     ) : (
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-2 sm:my-4">
                             {filteredSurah?.map((surah: SurahItemType, index: number) => (
-                                <Link href={`/ayah/${surah?.number}`} key={index} className="flex items-center justify-between p-5 sm:p-6 bg-white rounded-lg border border-slate-200 hover:shadow-md transition-all duration-300 hover:border-emerald-300">
+                                <Link href={`/ayah/${surah?.number}`} key={index} className="flex items-center justify-between p-5 sm:p-6 bg-white rounded-lg border border-slate-200 hover:shadow-md transition-all duration-300 hover:border-teal-300">
                                     <div className="flex items-center gap-4">
                                         <h1 className="arabic flex items-center gap-1 text-2xl">
-                                            <span className="ayah-number text-emerald-400 text-4xl">
+                                            <span className="ayah-number text-teal-400 text-4xl">
                                                 {toArabicNumber(surah?.number)}
                                             </span>
                                         </h1>

@@ -154,28 +154,28 @@ export default function PrayerTimePage() {
 
             <div className="mb-8">
                 <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-600"><path d="M8 2v4" /><path d="M16 2v4" /><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M3 10h18" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-600"><path d="M8 2v4" /><path d="M16 2v4" /><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M3 10h18" /></svg>
                     <h3 className="text-base sm:text-xl font-bold text-slate-900">Jadwal Hari Ini</h3>
-                    <span className="bg-emerald-200 py-1 px-3 rounded-full text-[0.6rem] sm:text-[0.7rem] font-semibold text-emerald-600">{formattedToday}</span>
+                    <span className="bg-teal-200 py-1 px-3 rounded-full text-[0.6rem] sm:text-[0.7rem] font-semibold text-teal-600">{formattedToday}</span>
                 </div>
                 {!selectedCity ? (
-                    <div className="bg-linear-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl p-5 sm:p-8 text-white shadow-lg border border-emerald-400/20">
+                    <div className="bg-linear-to-br from-teal-500 via-teal-600 to-teal-700 rounded-2xl p-5 sm:p-8 text-white shadow-lg border border-teal-400/20">
                         <p className="text-sm font-medium opacity-90">Pilih lokasi terlebih dahulu</p>
                     </div>
                 ) : isScheduleLoading ? (
-                    <div className="bg-linear-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl p-5 sm:p-8 text-white shadow-lg border border-emerald-400/20 flex items-center justify-center gap-3">
-                        <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-emerald-200"></div>
+                    <div className="bg-linear-to-br from-teal-500 via-teal-600 to-teal-700 rounded-2xl p-5 sm:p-8 text-white shadow-lg border border-teal-400/20 flex items-center justify-center gap-3">
+                        <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-teal-200"></div>
                         <p className="text-sm font-medium">Memuat data...</p>
                     </div>
                 ) : (
-                    <div className="flex items-center justify-between bg-linear-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl p-6 sm:px-8 sm:py-6 text-white shadow-lg border border-emerald-400/20">
+                    <div className="flex items-center justify-between bg-linear-to-br from-teal-500 via-teal-600 to-teal-700 rounded-2xl p-6 sm:px-8 sm:py-6 text-white shadow-lg border border-teal-400/20">
                         <div>
                             <p className="text-xs sm:text-sm font-medium opacity-90 mb-2">Shalat Berikutnya</p>
                             <h2 className="text-lg sm:text-2xl font-bold">{nextPrayerIcon} {nextPrayer}</h2>
                         </div>
                         <div>
                             <p className="text-xs sm:text-sm font-medium opacity-90 mb-2">Waktu tersisa</p>
-                            <p className="text-lg sm:text-2xl font-semibold text-emerald-100">{timeRemaining}</p>
+                            <p className="text-lg sm:text-2xl font-semibold text-teal-100">{timeRemaining}</p>
                         </div>
                     </div>
                 )}
@@ -183,11 +183,11 @@ export default function PrayerTimePage() {
 
             <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-7 sm:mb-8">
                 {prayerTimes.map((prayer, index) => (
-                    <div key={index} className={`flex flex-col items-center justify-center rounded-xl p-5 sm:p-6 border border-emerald-200 hover:shadow-md transition-all duration-300 hover:border-emerald-300 group ${prayer.name === nextPrayer ? "bg-emerald-50 border-2 border-emerald-200 shadow-[0_0_3px_#34d399]" : "bg-white"}`}>
+                    <div key={index} className={`flex flex-col items-center justify-center rounded-xl p-5 sm:p-6 border border-teal-200 hover:shadow-md transition-all duration-300 hover:border-teal-300 group ${prayer.name === nextPrayer ? "bg-teal-50 border-2 border-teal-200 shadow-[0_0_3px_#34d399]" : "bg-white"}`}>
                         <div className="text-2xl sm:text-3xl mb-4 group-hover:scale-110 transition-transform">{prayer.icon}</div>
                         <h4 className="font-semibold text-slate-900 mb-1">{prayer.name}</h4>
                         <p className="text-xs text-slate-500 mb-2">Waktu shalat</p>
-                        <p className="text-xl sm:text-2xl font-bold text-emerald-600">{prayer.time}</p>
+                        <p className="text-xl sm:text-2xl font-bold text-teal-600">{prayer.time}</p>
                     </div>
                 ))}
             </div>
@@ -202,16 +202,16 @@ export default function PrayerTimePage() {
                     {isScheduleLoading ? (
                         <div className="flex items-center justify-center py-16 bg-white rounded-2xl border border-slate-200">
                             <div className="flex flex-col items-center gap-4">
-                                <div className="animate-spin rounded-full h-12 w-12 border-4 border-slate-200 border-t-emerald-500"></div>
+                                <div className="animate-spin rounded-full h-12 w-12 border-4 border-slate-200 border-t-teal-500"></div>
                                 <p className="text-slate-600">Memuat jadwal shalat...</p>
                             </div>
                         </div>
                     ) : scheduleData && scheduleData.length > 0 ? (
-                        <div className="bg-white rounded-lg shadow-xs border border-emerald-200 overflow-hidden transition-all hover:shadow-sm">
+                        <div className="bg-white rounded-lg shadow-xs border border-teal-200 overflow-hidden transition-all hover:shadow-sm">
                             <div className="overflow-x-auto">
                                 <table className="w-full">
                                     <thead>
-                                        <tr className="bg-emerald-50 border-b border-slate-200 text-emerald-500 text-center text-xs sm:text-sm font-semibold whitespace-nowrap">
+                                        <tr className="bg-teal-50 border-b border-slate-200 text-teal-500 text-center text-xs sm:text-sm font-semibold whitespace-nowrap">
                                             <th className="p-4">Tanggal</th>
                                             <th className="p-4 text-left text-sm font-semibold whitespace-nowrap">Hari</th>
                                             <th className="p-4">Subuh</th>
@@ -225,9 +225,9 @@ export default function PrayerTimePage() {
                                     </thead>
                                     <tbody className="divide-y divide-slate-200">
                                         {scheduleData.map((schedule: ScheduleDataType, index: number) => (
-                                            <tr key={index} className="text-xs sm:text-sm hover:bg-emerald-50/50 transition-colors duration-150">
-                                                <td className="p-4 text-center font-semibold text-emerald-600">{schedule.tanggal}</td>
-                                                <td className="p-4 font-semibold text-emerald-500">{schedule.hari}</td>
+                                            <tr key={index} className="text-xs sm:text-sm hover:bg-teal-50/50 transition-colors duration-150">
+                                                <td className="p-4 text-center font-semibold text-teal-600">{schedule.tanggal}</td>
+                                                <td className="p-4 font-semibold text-teal-500">{schedule.hari}</td>
                                                 <td className="p-4 text-center text-slate-700">{schedule.subuh}</td>
                                                 <td className="p-4 text-center text-slate-700">{schedule.terbit}</td>
                                                 <td className="p-4 text-center text-slate-700">{schedule.dhuha}</td>

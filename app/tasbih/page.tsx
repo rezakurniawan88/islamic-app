@@ -10,7 +10,7 @@ interface Dzikir {
 }
 
 const DZIKIR_LIST: Dzikir[] = [
-    { name: "Subhanallah", color: "from-green-400 to-emerald-500", textColor: "text-emerald-500" },
+    { name: "Subhanallah", color: "from-green-400 to-teal-500", textColor: "text-teal-500" },
     { name: "Alhamdullilah", color: "from-blue-400 to-cyan-500", textColor: "text-cyan-500" },
     { name: "Allahu Akbar", color: "from-purple-400 to-indigo-500", textColor: "text-indigo-500" }
 ];
@@ -62,7 +62,7 @@ export default function TasbihPage() {
                 <div className="flex flex-col justify-center items-center gap-8 w-full min-h-[70vh]">
                     {!started ? (
                         <div className="flex flex-col items-center gap-10">
-                            <div className="w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-linear-to-br from-emerald-400 to-emerald-600 flex items-center justify-center shadow-xl hover:shadow-emerald-500/50 transition-all duration-300 transform hover:scale-105 cursor-pointer"
+                            <div className="w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-linear-to-br from-teal-400 to-teal-600 flex items-center justify-center shadow-xl hover:shadow-teal-500/50 transition-all duration-300 transform hover:scale-105 cursor-pointer"
                                 onClick={() => setStarted(true)}>
                                 <span className="text-8xl sm:text-[7rem] font-bold text-white ml-5">▶</span>
                             </div>
@@ -79,7 +79,7 @@ export default function TasbihPage() {
                             </div>
                             <button
                                 onClick={handleReset}
-                                className="mt-0 sm:mt-3 px-8 py-3 bg-linear-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-emerald-500/50 transition-all duration-300 transform hover:scale-105">
+                                className="mt-0 sm:mt-3 px-8 py-3 bg-linear-to-r from-teal-500 to-teal-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-teal-500/50 transition-all duration-300 transform hover:scale-105">
                                 Mulai Lagi
                             </button>
                         </div>
@@ -109,7 +109,7 @@ export default function TasbihPage() {
                             <div className="relative flex flex-col items-center justify-center gap-10">
                                 <div onClick={handleCounter} className={`relative w-60 h-60 sm:w-72 sm:h-72 rounded-full bg-linear-to-br ${currentDzikir.color} flex items-center justify-center shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer`}
                                     style={{
-                                        boxShadow: `0 0 40px rgba(${currentDzikir.color === 'from-green-400 to-emerald-500' ? '16, 185, 129' : currentDzikir.color === 'from-blue-400 to-cyan-500' ? '34, 197, 94' : '99, 102, 241'}, 0.3)`
+                                        boxShadow: `0 0 40px rgba(${currentDzikir.color === 'from-green-400 to-teal-500' ? '16, 185, 129' : currentDzikir.color === 'from-blue-400 to-cyan-500' ? '34, 197, 94' : '99, 102, 241'}, 0.3)`
                                     }}>
                                     <p className="hidden sm:block text-2xl sm:text-4xl font-bold text-white select-none">Press</p>
                                     <div className="block sm:hidden text-center">

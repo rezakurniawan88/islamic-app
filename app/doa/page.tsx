@@ -42,7 +42,7 @@ export default function DoaPage() {
                         value={selectedGroup}
                         options={groups.map(g => ({ value: g, label: g }))}
                         icon={
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-500 rotate-45"><path d="M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z" /><path d="M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.916a1 1 0 0 0-1.414 0z" /><path d="M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z" /><path d="M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500 rotate-45"><path d="M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z" /><path d="M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.916a1 1 0 0 0-1.414 0z" /><path d="M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z" /><path d="M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z" /></svg>
                         }
                         onChange={setSelectedGroup}
                     />
@@ -51,7 +51,7 @@ export default function DoaPage() {
                         value={selectedTag}
                         options={tags.map(t => ({ value: t, label: t }))}
                         icon={
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-500"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" /><circle cx="7.5" cy="7.5" r=".5" fill="currentColor" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" /><circle cx="7.5" cy="7.5" r=".5" fill="currentColor" /></svg>
                         }
                         onChange={setSelectedTag}
                         searchable={true}
@@ -71,19 +71,19 @@ export default function DoaPage() {
                         {filteredDoaList?.map((doa: DoaTypeProps) => (
                             <Link href={`/doa/${doa.id}`} passHref
                                 key={doa.id}
-                                className="group relative bg-white rounded-2xl border border-emerald-100 p-6 
-                                           hover:border-emerald-200 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] 
+                                className="group relative bg-white rounded-2xl border border-teal-100 p-6 
+                                           hover:border-teal-200 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] 
                                            transition-all duration-300 cursor-pointer overflow-hidden">
                                 <div className="mb-4">
                                     <span className="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-wide 
-                                                     text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block" />
+                                                     text-teal-600 bg-teal-50 px-3 py-1 rounded-full border border-teal-100">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-teal-400 inline-block" />
                                         {doa.grup}
                                     </span>
                                 </div>
 
                                 <h2 className="text-base font-semibold text-slate-800 mb-3 line-clamp-2 
-                                               group-hover:text-emerald-700 transition-colors duration-200 leading-snug">
+                                               group-hover:text-teal-700 transition-colors duration-200 leading-snug">
                                     {doa.nama}
                                 </h2>
 
@@ -98,8 +98,8 @@ export default function DoaPage() {
                                         ))}
                                     </div>
                                     <div className="shrink-0 w-7 h-7 rounded-full bg-slate-50 flex items-center justify-center 
-                                                    group-hover:bg-emerald-50 transition-colors duration-200">
-                                        <svg className="w-3.5 h-3.5 text-slate-300 group-hover:text-emerald-500 
+                                                    group-hover:bg-teal-50 transition-colors duration-200">
+                                        <svg className="w-3.5 h-3.5 text-slate-300 group-hover:text-teal-500 
                                                         transition-all duration-200 group-hover:translate-x-0.5"
                                             fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />

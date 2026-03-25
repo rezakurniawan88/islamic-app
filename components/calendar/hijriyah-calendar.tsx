@@ -119,10 +119,10 @@ export default function HijriyahCalendar() {
                     <div className="flex justify-between items-center mb-4">
                         <h2 className="text-lg sm:text-2xl font-bold text-slate-900">{gregorianHeaderLabel}</h2>
                         <div className="flex gap-1.5">
-                            <button onClick={handlePrevMonth} className="p-2 sm:p-2.5 rounded-full bg-white border border-slate-200 hover:border-emerald-400 hover:bg-emerald-50 transition-all duration-200 shadow-sm hover:shadow-md">
+                            <button onClick={handlePrevMonth} className="p-2 sm:p-2.5 rounded-full bg-white border border-slate-200 hover:border-teal-400 hover:bg-teal-50 transition-all duration-200 shadow-sm hover:shadow-md">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-slate-700"><path d="m15 18-6-6 6-6" /></svg>
                             </button>
-                            <button onClick={handleNextMonth} className="p-2 sm:p-2.5 rounded-full bg-white border border-slate-200 hover:border-emerald-400 hover:bg-emerald-50 transition-all duration-200 shadow-sm hover:shadow-md">
+                            <button onClick={handleNextMonth} className="p-2 sm:p-2.5 rounded-full bg-white border border-slate-200 hover:border-teal-400 hover:bg-teal-50 transition-all duration-200 shadow-sm hover:shadow-md">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-slate-700"><path d="m9 18 6-6-6-6" /></svg>
                             </button>
                         </div>
@@ -156,8 +156,8 @@ export default function HijriyahCalendar() {
                                             p-1.5 sm:px-3 sm:py-4 min-h-20 sm:min-h-28 rounded-lg sm:rounded-xl transition-all duration-200 ${day ? "cursor-pointer" : ""
                                                 }
                                             ${day ? isTodayDate
-                                                    ? "bg-emerald-300 border border-emerald-200 hover:shadow-md hover:from-emerald-100 hover:to-emerald-100"
-                                                    : "bg-white border border-slate-200 hover:border-emerald-300 hover:shadow-md hover:bg-emerald-50"
+                                                    ? "bg-teal-300 border border-teal-200 hover:shadow-md hover:from-teal-100 hover:to-teal-100"
+                                                    : "bg-white border border-slate-200 hover:border-teal-300 hover:shadow-md hover:bg-teal-50"
                                                     : "bg-slate-50"
                                                 }
                                         `}
@@ -176,8 +176,8 @@ export default function HijriyahCalendar() {
 
                                                     {hasHoliday && (
                                                         <div className="mt-auto">
-                                                            <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[0.6rem] sm:text-[11px] font-medium tracking-wide text-emerald-600 bg-emerald-50 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full border border-emerald-100 w-full">
-                                                                <span className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-emerald-400 inline-block shrink-0" />
+                                                            <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[0.6rem] sm:text-[11px] font-medium tracking-wide text-teal-600 bg-teal-50 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full border border-teal-100 w-full">
+                                                                <span className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-teal-400 inline-block shrink-0" />
                                                                 <span className="truncate">{day.hijri.holidays[0]}</span>
                                                             </span>
                                                         </div>

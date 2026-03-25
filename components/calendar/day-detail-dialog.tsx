@@ -56,8 +56,8 @@ export default function DayDetailDialog({ day, onClose }: DayDetailDialogProps) 
                 </div>
 
                 {day.hijri.holidays.length > 0 && (
-                    <span className="inline-flex items-center gap-2 text-sm font-medium tracking-wide text-emerald-600 bg-emerald-50 px-3 py-2.5 mb-4 rounded-lg border border-emerald-100 w-full">
-                        <span className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-emerald-400 inline-block shrink-0" />
+                    <span className="inline-flex items-center gap-2 text-sm font-medium tracking-wide text-teal-600 bg-teal-50 px-3 py-2.5 mb-4 rounded-lg border border-teal-100 w-full">
+                        <span className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-teal-400 inline-block shrink-0" />
                         <span className="truncate">{day.hijri.holidays[0]}</span>
                     </span>
                 )}
@@ -65,12 +65,12 @@ export default function DayDetailDialog({ day, onClose }: DayDetailDialogProps) 
                 <div>
                     <h3 className="font-semibold text-slate-800 mb-2">Jadwal Sholat</h3>
                     <ul className="space-y-2 sm:space-y-1.5 text-slate-600 text-xs sm:text-base">
-                        <li className="flex justify-between"><span>Imsak</span> <span className="text-emerald-400">{day.prayers.Imsak.split(' ')[0]}</span></li>
-                        <li className="flex justify-between"><span>Subuh</span> <span className="text-emerald-400">{day.prayers.Fajr.split(' ')[0]}</span></li>
-                        <li className="flex justify-between"><span>Dzuhur</span> <span className="text-emerald-400">{day.prayers.Dhuhr.split(' ')[0]}</span></li>
-                        <li className="flex justify-between"><span>Ashar</span> <span className="text-emerald-400">{day.prayers.Asr.split(' ')[0]}</span></li>
-                        <li className="flex justify-between"><span>Maghrib</span> <span className="text-emerald-400">{day.prayers.Maghrib.split(' ')[0]}</span></li>
-                        <li className="flex justify-between"><span>Isya</span> <span className="text-emerald-400">{day.prayers.Isha.split(' ')[0]}</span></li>
+                        <li className="flex justify-between"><span>Imsak</span> <span className="text-teal-400">{day.prayers.Imsak.split(' ')[0]}</span></li>
+                        <li className="flex justify-between"><span>Subuh</span> <span className="text-teal-400">{day.prayers.Fajr.split(' ')[0]}</span></li>
+                        <li className="flex justify-between"><span>Dzuhur</span> <span className="text-teal-400">{day.prayers.Dhuhr.split(' ')[0]}</span></li>
+                        <li className="flex justify-between"><span>Ashar</span> <span className="text-teal-400">{day.prayers.Asr.split(' ')[0]}</span></li>
+                        <li className="flex justify-between"><span>Maghrib</span> <span className="text-teal-400">{day.prayers.Maghrib.split(' ')[0]}</span></li>
+                        <li className="flex justify-between"><span>Isya</span> <span className="text-teal-400">{day.prayers.Isha.split(' ')[0]}</span></li>
                     </ul>
                 </div>
             </div>

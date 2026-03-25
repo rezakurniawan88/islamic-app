@@ -74,14 +74,14 @@ export default function ImsakiyahPage() {
 
                         {isScheduleLoading ? (
                             <div className="flex items-center justify-center py-12">
-                                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-500"></div>
+                                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-500"></div>
                             </div>
                         ) : scheduleData && scheduleData.length > 0 ? (
-                            <div className="bg-white rounded-lg shadow-xs border border-emerald-200 overflow-hidden transition-all hover:shadow-sm">
+                            <div className="bg-white rounded-lg shadow-xs border border-teal-200 overflow-hidden transition-all hover:shadow-sm">
                                 <div className="overflow-x-auto">
                                     <table className="w-full">
                                         <thead>
-                                            <tr className="bg-emerald-50 border-b border-slate-200 text-emerald-500 text-center text-xs sm:text-sm font-semibold whitespace-nowrap">
+                                            <tr className="bg-teal-50 border-b border-slate-200 text-teal-500 text-center text-xs sm:text-sm font-semibold whitespace-nowrap">
                                                 <th className="p-4 text-center">Tanggal</th>
                                                 <th className="p-4 text-left">Imsak</th>
                                                 <th className="p-4 text-left">Subuh</th>
@@ -96,14 +96,14 @@ export default function ImsakiyahPage() {
                                         <tbody className="divide-y divide-slate-200">
                                             {scheduleData.map((schedule: ScheduleDataType, index: number) => (
                                                 <tr key={index} className="text-xs sm:text-sm hover:bg-slate-50 transition-colors duration-150">
-                                                    <td className="p-4 text-center font-semibold text-emerald-600">{schedule.tanggal}</td>
-                                                    <td className="p-4 font-semibold text-emerald-500">{schedule.imsak}</td>
+                                                    <td className="p-4 text-center font-semibold text-teal-600">{schedule.tanggal}</td>
+                                                    <td className="p-4 font-semibold text-teal-500">{schedule.imsak}</td>
                                                     <td className="p-4 text-slate-700">{schedule.subuh}</td>
                                                     <td className="p-4 text-slate-700">{schedule.terbit}</td>
                                                     <td className="p-4 text-slate-700">{schedule.dhuha}</td>
                                                     <td className="p-4 text-slate-700">{schedule.dzuhur}</td>
                                                     <td className="p-4 text-slate-700">{schedule.ashar}</td>
-                                                    <td className="p-4 font-semibold text-emerald-500">{schedule.maghrib}</td>
+                                                    <td className="p-4 font-semibold text-teal-500">{schedule.maghrib}</td>
                                                     <td className="p-4 text-slate-700">{schedule.isya}</td>
                                                 </tr>
                                             ))}
@@ -112,7 +112,7 @@ export default function ImsakiyahPage() {
                                 </div>
                             </div>
                         ) : (
-                            <div className="flex items-center justify-center py-12 bg-white rounded-2xl border border-emerald-200">
+                            <div className="flex items-center justify-center py-12 bg-white rounded-2xl border border-teal-200">
                                 <p className="text-slate-500">Data jadwal tidak tersedia</p>
                             </div>
                         )}

@@ -36,14 +36,14 @@ export default function Header() {
         <header className={`sticky top-0 z-20 flex items-center justify-between w-full py-5 px-12 border-b border-slate-100 transition-all duration-300 ${isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-white"}`}>
             {/* <div className="flex items-center gap-8"> */}
             <div className="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-400 lucide lucide-moon-star-icon lucide-moon-star"><path d="M18 5h4" /><path d="M20 3v4" /><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></svg>
-                <h1 className="text-emerald-400 text-lg font-semibold">Islamic App</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-400 lucide lucide-moon-star-icon lucide-moon-star"><path d="M18 5h4" /><path d="M20 3v4" /><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></svg>
+                <h1 className="text-teal-400 text-lg font-semibold">Islamic App</h1>
             </div>
             {/* </div> */}
             <nav className="flex gap-6">
                 {navItems.map((item, index) => (
                     <Link key={index} href={item.href}>
-                        <h1 className={`text-sm font-semibold cursor-pointer ${pathname === item.href ? "text-emerald-400 hover:text-emerald-500" : "text-slate-500 hover:text-slate-700"}`}>{item.label}</h1>
+                        <h1 className={`text-sm font-semibold cursor-pointer ${pathname === item.href ? "text-teal-400 hover:text-teal-500" : "text-slate-500 hover:text-slate-700"}`}>{item.label}</h1>
                     </Link>
                 ))}
             </nav>

@@ -172,7 +172,7 @@ export default function AyahPage({ params }: { params: Promise<{ ayahId: string 
                                 options={surahOptions}
                                 searchable
                                 icon={
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-500"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
                                 }
                                 onChange={(val) => { router.push(`/ayah/${val}`); }}
                             />
@@ -182,7 +182,7 @@ export default function AyahPage({ params }: { params: Promise<{ ayahId: string 
                                 value={selectedTranslation}
                                 options={TRANSLATION_OPTIONS}
                                 icon={
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-500"><path d="m5 8 6 6" /><path d="m4 14 6-6 2-3" /><path d="M2 5h12" /><path d="M7 2h1" /><path d="m22 22-5-10-5 10" /><path d="M14 18h6" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><path d="m5 8 6 6" /><path d="m4 14 6-6 2-3" /><path d="M2 5h12" /><path d="M7 2h1" /><path d="m22 22-5-10-5 10" /><path d="M14 18h6" /></svg>
                                 }
                                 onChange={(val) => {
                                     stopAudio();
@@ -195,7 +195,7 @@ export default function AyahPage({ params }: { params: Promise<{ ayahId: string 
                                 value={selectedQori}
                                 options={QORI_OPTIONS}
                                 icon={
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-500"><path d="M2 10v3" /><path d="M6 6v11" /><path d="M10 3v18" /><path d="M14 8v7" /><path d="M18 5v13" /><path d="M22 10v3" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><path d="M2 10v3" /><path d="M6 6v11" /><path d="M10 3v18" /><path d="M14 8v7" /><path d="M18 5v13" /><path d="M22 10v3" /></svg>
                                 }
                                 onChange={(val) => {
                                     stopAudio();
@@ -204,7 +204,7 @@ export default function AyahPage({ params }: { params: Promise<{ ayahId: string 
                             />
                         </div>
 
-                        <div className={`flex items-center justify-between bg-linear-to-br from-emerald-400 to-emerald-500 rounded-xl p-6 sm:p-8 mx-4 text-white shadow-lg ${ayahId === "1" || ayahId === "9" ? "mb-6" : ""}`}>
+                        <div className={`flex items-center justify-between bg-linear-to-br from-teal-400 to-teal-500 rounded-xl p-6 sm:p-8 mx-4 text-white shadow-lg ${ayahId === "1" || ayahId === "9" ? "mb-6" : ""}`}>
                             <div className="space-y-1">
                                 <h2 className="text-xl sm:text-2xl font-bold">{firstAyah?.englishName}</h2>
                                 <p className="text-xs sm:text-sm font-medium opacity-90">
@@ -242,13 +242,13 @@ export default function AyahPage({ params }: { params: Promise<{ ayahId: string 
                                             virtualizer.measureElement(el);
                                             if (el) ayahRefs.current[virtualItem.index] = el;
                                         }}
-                                        className={`absolute top-0 left-0 w-full px-4 ${isCurrentPlaying ? "bg-emerald-50 border-b border-slate-200" : ""}`}
+                                        className={`absolute top-0 left-0 w-full px-4 ${isCurrentPlaying ? "bg-teal-50 border-b border-slate-200" : ""}`}
                                         style={{ transform: `translateY(${virtualItem.start - scrollMargin}px)` }}
                                     >
                                         <div className={`py-4 sm:py-8 space-y-4 ${!isCurrentPlaying ? "border-b border-slate-200" : ""}`}>
                                             <h1 className="arabic flex items-center gap-1 text-2xl sm:text-4xl">
                                                 {currentAyah?.arabic}
-                                                <span className="ayah-number text-emerald-500 text-4xl">
+                                                <span className="ayah-number text-teal-500 text-4xl">
                                                     {toArabicNumber(currentAyah?.number ?? 0)}
                                                 </span>
                                             </h1>
@@ -256,7 +256,7 @@ export default function AyahPage({ params }: { params: Promise<{ ayahId: string 
                                                 <button
                                                     onClick={() => playAyah(virtualItem.index)}
                                                     disabled={!currentAyah?.audio}
-                                                    className="px-2.5 sm:px-4 py-2 sm:py-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-600 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+                                                    className="px-2.5 sm:px-4 py-2 sm:py-2 bg-teal-500 text-white rounded-md hover:bg-teal-600 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
                                                 >
                                                     {isCurrentPlaying ? (
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="white" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className=""><rect x="14" y="3" width="5" height="18" rx="1" /><rect x="5" y="3" width="5" height="18" rx="1" /></svg>
@@ -271,7 +271,7 @@ export default function AyahPage({ params }: { params: Promise<{ ayahId: string 
                                                 )}
                                             </div>
                                             <div>
-                                                <h1 className="italic text-emerald-400 font-semibold text-sm sm:text-base">
+                                                <h1 className="italic text-teal-400 font-semibold text-sm sm:text-base">
                                                     {currentAyah?.latin}
                                                 </h1>
                                                 <p className="translation text-xs sm:text-sm text-slate-700">

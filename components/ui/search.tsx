@@ -21,7 +21,7 @@ export default function Search({ searchTerm, onSearchChange }: SearchProps) {
                     placeholder="Cari surah berdasarkan nama atau nomor..."
                     value={searchTerm}
                     onChange={(e) => onSearchChange(e.target.value)}
-                    className="block w-full p-3 pl-9 text-xs sm:text-sm text-gray-900 border border-slate-200 rounded-lg placeholder:text-xs sm:placeholder:text-sm placeholder-gray-400 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-all"
+                    className="block w-full p-3 pl-9 text-xs sm:text-sm text-gray-900 border border-slate-200 rounded-lg placeholder:text-xs sm:placeholder:text-sm placeholder-gray-400 focus:outline-none focus:border-teal-400 focus:ring-1 focus:ring-teal-400 transition-all"
                 />
             </div>
         </form>

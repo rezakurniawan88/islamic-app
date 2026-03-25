@@ -22,7 +22,7 @@ export default function TafsirDetailPage({ params }: { params: Promise<{ tafsirI
                 {isLoading ? (
                     <div className="flex items-center justify-center min-h-96">
                         <div className="animate-spin">
-                            <svg className="w-12 h-12 text-emerald-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <svg className="w-12 h-12 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                 ></path>
@@ -42,7 +42,7 @@ export default function TafsirDetailPage({ params }: { params: Promise<{ tafsirI
                                 <span className="font-semibold cursor-pointer">Surah {tafsirDetail.namaLatin}</span>
                             </div>
 
-                            <div className="flex items-center justify-between bg-linear-to-br from-emerald-400 to-emerald-500 rounded-xl p-6 sm:p-8 text-white shadow-lg">
+                            <div className="flex items-center justify-between bg-linear-to-br from-teal-400 to-teal-500 rounded-xl p-6 sm:p-8 text-white shadow-lg">
                                 <div className="space-y-1">
                                     <div className="flex items-center gap-2">
                                         <h2 className="text-xl sm:text-2xl font-bold">{tafsirDetail.namaLatin}</h2>
@@ -64,7 +64,7 @@ export default function TafsirDetailPage({ params }: { params: Promise<{ tafsirI
 
                         <div className="flex items-center gap-3 my-6 sm:my-8">
                             <div className="flex-1 h-px bg-slate-100" />
-                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-300" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-teal-300" />
                             <div className="flex-1 h-px bg-slate-100" />
                         </div>
 
@@ -77,8 +77,8 @@ export default function TafsirDetailPage({ params }: { params: Promise<{ tafsirI
                                             onClick={() => toggleAccordion(tafsir.ayat)}
                                             className="w-full flex items-center justify-between p-4 sm:p-5 bg-white hover:bg-slate-50 transition-colors"
                                         >
-                                            <span className="inline-block bg-emerald-100 text-emerald-800 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[0.7rem] sm:text-xs font-semibold">Tafsir {tafsirDetail.namaLatin} Ayat {tafsir.ayat}</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`w-5 h-5 text-emerald-600 transition-transform duration-300 ${expandedAyat === tafsir.ayat ? 'rotate-180' : ''}`}><path d="m6 9 6 6 6-6" /></svg>
+                                            <span className="inline-block bg-teal-100 text-teal-800 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-[0.7rem] sm:text-xs font-semibold">Tafsir {tafsirDetail.namaLatin} Ayat {tafsir.ayat}</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`w-5 h-5 text-teal-600 transition-transform duration-300 ${expandedAyat === tafsir.ayat ? 'rotate-180' : ''}`}><path d="m6 9 6 6 6-6" /></svg>
                                         </button>
 
                                         {expandedAyat === tafsir.ayat && (
