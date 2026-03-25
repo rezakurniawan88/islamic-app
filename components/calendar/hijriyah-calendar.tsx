@@ -1,10 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import {
-    useFetchIslamicCalendar,
-    type HijriDay,
-} from "@/hooks/useFetchIslamicCalendar";
+import { useFetchIslamicCalendar, type HijriDay } from "@/hooks/useFetchIslamicCalendar";
 import DayDetailDialog from "./day-detail-dialog";
 
 export default function HijriyahCalendar() {
@@ -16,7 +13,7 @@ export default function HijriyahCalendar() {
     const { data: calendarData, isLoading, isError } = useFetchIslamicCalendar(
         gregorianMonth,
         gregorianYear,
-        "Yogyakarta",
+        "Jakarta",
     );
 
     const handlePrevMonth = () => {
@@ -109,39 +106,55 @@ export default function HijriyahCalendar() {
         year: "numeric",
     });
 
+    const dayLabels = [
+        { short: "S", full: "Minggu" },
+        { short: "S", full: "Senin" },
+        { short: "S", full: "Selasa" },
+        { short: "R", full: "Rabu" },
+        { short: "K", full: "Kamis" },
+        { short: "J", full: "Jumat" },
+        { short: "S", full: "Sabtu" },
+    ];
+
     return (
         <>
             {selectedDay && (
                 <DayDetailDialog day={selectedDay} onClose={handleCloseDialog} />
             )}
-            <div className="border border-slate-100 rounded-2xl p-4 sm:p-6 bg-white shadow-xs hover:shadow-sm transition-shadow duration-300">
-                <div className="mb-4 sm:mb-6">
-                    <div className="flex justify-between items-center mb-4">
-                        <h2 className="text-lg sm:text-2xl font-bold text-slate-900">{gregorianHeaderLabel}</h2>
+            <div className="border border-slate-100 rounded-2xl p-3 sm:p-6 bg-white shadow-xs hover:shadow-sm transition-shadow duration-300">
+                <div className="mb-3 sm:mb-6">
+                    <div className="flex justify-between items-center">
+                        <h2 className="text-base sm:text-2xl font-bold text-slate-900">{gregorianHeaderLabel}</h2>
                         <div className="flex gap-1.5">
-                            <button onClick={handlePrevMonth} className="p-2 sm:p-2.5 rounded-full bg-white border border-slate-200 hover:border-teal-400 hover:bg-teal-50 transition-all duration-200 shadow-sm hover:shadow-md">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-slate-700"><path d="m15 18-6-6 6-6" /></svg>
+                            <button onClick={handlePrevMonth} className="p-1.5 sm:p-2.5 rounded-full bg-white border border-slate-200 hover:border-teal-400 hover:bg-teal-50 transition-all duration-200 shadow-sm hover:shadow-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 sm:w-5 sm:h-5 text-slate-700">
+                                    <path d="m15 18-6-6 6-6" />
+                                </svg>
                             </button>
-                            <button onClick={handleNextMonth} className="p-2 sm:p-2.5 rounded-full bg-white border border-slate-200 hover:border-teal-400 hover:bg-teal-50 transition-all duration-200 shadow-sm hover:shadow-md">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-slate-700"><path d="m9 18 6-6-6-6" /></svg>
+                            <button onClick={handleNextMonth} className="p-1.5 sm:p-2.5 rounded-full bg-white border border-slate-200 hover:border-teal-400 hover:bg-teal-50 transition-all duration-200 shadow-sm hover:shadow-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 sm:w-5 sm:h-5 text-slate-700">
+                                    <path d="m9 18 6-6-6-6" />
+                                </svg>
                             </button>
                         </div>
                     </div>
                 </div>
 
                 <div className="overflow-hidden">
-                    <div className="grid grid-cols-7 gap-1 sm:gap-2 mb-2 sm:mb-3">
-                        {["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"].map((day) => (
-                            <div key={day} className="p-1 sm:p-3">
-                                <span className="block sm:hidden text-[0.65rem] font-bold text-slate-500 uppercase tracking-wider">
-                                    {day.substring(0, 3)}
+                    <div className="grid grid-cols-7 mt-2 sm:mt-4 mb-1 sm:mb-3">
+                        {dayLabels.map((day, idx) => (
+                            <div key={idx} className="flex justify-center py-1 sm:py-0 sm:p-3">
+                                <span className="block sm:hidden text-[0.65rem] font-bold text-slate-400 uppercase">
+                                    {day.short}
                                 </span>
-                                <span className="hidden sm:block text-xs font-bold text-slate-500 uppercase tracking-wider">{day}</span>
+                                <span className="hidden sm:block text-xs font-bold text-slate-500 uppercase tracking-wider">
+                                    {day.full}
+                                </span>
                             </div>
                         ))}
                     </div>
 
-                    <div className="space-y-1 sm:space-y-2">
+                    <div className="space-y-1">
                         {calendarWeeks.map((week, weekIdx) => (
                             <div key={weekIdx} className="grid grid-cols-7 gap-1 sm:gap-2">
                                 {week.map((day, dayIdx) => {
@@ -149,38 +162,42 @@ export default function HijriyahCalendar() {
                                     const hasHoliday = (day?.hijri?.holidays?.length ?? 0) > 0;
 
                                     return (
-                                        <div
-                                            key={dayIdx}
-                                            onClick={() => handleDayClick(day)}
+                                        <div key={dayIdx} onClick={() => handleDayClick(day)}
                                             className={`
-                                            p-1.5 sm:px-3 sm:py-4 min-h-20 sm:min-h-28 rounded-lg sm:rounded-xl transition-all duration-200 ${day ? "cursor-pointer" : ""
+                                                relative rounded-lg sm:rounded-xl transition-all duration-200
+                                                /* Mobile: compact square-ish cells */
+                                                p-4 sm:px-3 sm:py-4
+                                                sm:min-h-28
+                                                ${day ? "cursor-pointer" : ""}
+                                                ${day
+                                                    ? isTodayDate
+                                                        ? "bg-teal-400 border border-teal-300 hover:shadow-md"
+                                                        : "bg-white border border-slate-100 hover:border-teal-300 hover:shadow-md hover:bg-teal-50"
+                                                    : "bg-slate-50/50"
                                                 }
-                                            ${day ? isTodayDate
-                                                    ? "bg-teal-300 border border-teal-200 hover:shadow-md hover:from-teal-100 hover:to-teal-100"
-                                                    : "bg-white border border-slate-200 hover:border-teal-300 hover:shadow-md hover:bg-teal-50"
-                                                    : "bg-slate-50"
-                                                }
-                                        `}
+                                            `}
                                         >
                                             {day ? (
                                                 <div className="flex flex-col h-full">
-                                                    <div className="flex flex-wrap items-center gap-1 mb-1 sm:mb-2">
-                                                        <span className={`text-sm sm:text-base font-bold ${isTodayDate ? "text-white" : "text-slate-900"}`}>
-                                                            {day.gregorian.day}
-                                                        </span>
-                                                    </div>
+                                                    <span className={`block text-center sm:text-left text-sm sm:text-base font-bold leading-none mb-0.5 sm:mb-2 ${isTodayDate ? "text-white" : "text-slate-800"}`}>
+                                                        {day.gregorian.day}
+                                                    </span>
 
-                                                    <span className={`text-[0.6rem] sm:text-[0.7rem] font-medium leading-tight mb-1 sm:mb-2 line-clamp-2 ${isTodayDate ? "text-white font-semibold" : "text-slate-500"}`}>
+                                                    <span className={`hidden sm:block text-[0.7rem] font-medium leading-tight mb-2 ${isTodayDate ? "text-teal-50" : "text-slate-400"}`}>
                                                         {day.hijri.day} {day.hijri.month.en} {day.hijri.year}
                                                     </span>
 
                                                     {hasHoliday && (
-                                                        <div className="mt-auto">
-                                                            <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[0.6rem] sm:text-[11px] font-medium tracking-wide text-teal-600 bg-teal-50 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full border border-teal-100 w-full">
-                                                                <span className="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-teal-400 inline-block shrink-0" />
-                                                                <span className="truncate">{day.hijri.holidays[0]}</span>
-                                                            </span>
-                                                        </div>
+                                                        <>
+                                                            <span className="block sm:hidden absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-teal-400" />
+
+                                                            <div className="hidden sm:block mt-auto">
+                                                                <span className="inline-flex items-center gap-1.5 text-[11px] font-medium tracking-wide text-teal-600 bg-teal-50 px-2 py-1 rounded-full border border-teal-100 w-full">
+                                                                    <span className="w-1.5 h-1.5 rounded-full bg-teal-400 inline-block shrink-0" />
+                                                                    <span className="truncate">{day.hijri.holidays[0]}</span>
+                                                                </span>
+                                                            </div>
+                                                        </>
                                                     )}
                                                 </div>
                                             ) : null}
