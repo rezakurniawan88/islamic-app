@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react"
 
-type NavItem = "alquran" | "tafsir" | "prayer" | "imsakiyah" | "doa" | "asmaul-husna" | "tasbih"
+type NavItem = "alquran" | "tafsir" | "prayer" | "imsakiyah" | "doa" | "hadist" | "asmaul-husna" | "tasbih" | "kalender"
 
 export default function Sidebar() {
     const [sidebarIsOpen, setSidebarIsOpen] = useState<boolean>(true);
@@ -51,6 +51,14 @@ export default function Sidebar() {
             ),
             label: "Doa",
             href: "/doa"
+        },
+        {
+            id: "hadist" as NavItem,
+            icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-teal-500"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" /></svg>
+            ),
+            label: "Hadist",
+            href: "/hadist"
         },
         {
             id: "asmaul-husna" as NavItem,
